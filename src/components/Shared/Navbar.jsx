@@ -1,0 +1,44 @@
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.svg'
+
+
+const Navbar = () => {
+
+
+    const navItems = <>
+        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/home">Home</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/about">About</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/all-toys">All Toys</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/my-toys">My Toys</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/add-toy">Add A Toy</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/blogs">Blogs</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/contacts">Contact</NavLink>
+    </>
+
+    return (
+        <div className="navbar bg-base-100 h-24">
+            <div className="navbar-start">
+                <div className="dropdown">
+                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        {navItems}
+                    </ul>
+                </div>
+                <Link to="/home" className="btn btn-ghost normal-case text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">JS ToyHub</Link>
+            </div>
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal font-semibold text-gray-500 flex gap-5 items-center">
+                    {navItems}
+                </ul>
+            </div>
+            <div className="navbar-end">
+                <Link to='/login'><button className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 '>Login</button></Link>
+            </div>
+        </div>
+    );
+};
+
+export default Navbar;
