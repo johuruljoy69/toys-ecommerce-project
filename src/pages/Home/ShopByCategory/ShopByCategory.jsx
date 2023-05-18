@@ -4,7 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 
 const ShopByCategory = () => {
     return (
-        <div className='text-center mt-12 mb-12'>
+        <div className='text-center mt-24 mb-12'>
             <h2 className='text-5xl font-bold mb-6'>Shop By Category</h2>
             <p className='mb-6'>Our Collections</p>
             <Tabs>
