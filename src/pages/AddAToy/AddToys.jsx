@@ -25,7 +25,7 @@ const AddToys = () => {
     };
 
     return (
-        <div className='mt-12'>
+        <div>
             <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {/* toy name */}
@@ -97,9 +97,9 @@ const AddToys = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         >
                             <option value="">Select a category</option>
-                            <option value="Sports Car" >Sports Car</option>
-                            <option value="Police Car" >Mini Police Car</option>
-                            <option value="Fire Truck">Mini Fire Truck</option>
+                            <option value="sportsCar" >Sports Car</option>
+                            <option value="policeCar" >Mini Police Car</option>
+                            <option value="fireTruck">Mini Fire Truck</option>
                         </select>
                         {errors.category && <p className="text-red-500 text-xs italic">Category is required</p>}
                     </div>
@@ -174,10 +174,10 @@ const AddToys = () => {
 
                 </div>
 
-                <div className="text-center">
+                <div className="flex items-center justify-between">
                     <button
                         type="submit"
-                        className="bg-blue-500 hover:bg-blue-700 text-white w-full font-bold py-3 px-7 rounded focus:outline-none focus:shadow-outline"
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
                         Add Toy Product
                     </button>

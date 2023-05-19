@@ -14,6 +14,7 @@ import Contact from '../pages/Contact/Contact';
 import Login from '../pages/Login/Login';
 import SignUp from '../pages/SignUp/SignUp';
 import ErrorPage from '../components/ErrorPage';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/my-toys',
-                element: <MyToys></MyToys>
+                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
             {
                 path: '/add-toy',

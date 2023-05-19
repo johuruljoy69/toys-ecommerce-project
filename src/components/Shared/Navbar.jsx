@@ -15,13 +15,13 @@ const Navbar = () => {
     }
 
     const navItems = <>
-        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/">Home</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/about">About</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/all-toys">All Toys</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/my-toys">My Toys</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/add-toy">Add A Toy</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/blogs">Blogs</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/contact">Contact</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/">Home</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/about">About</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/all-toys">All Toys</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/my-toys">My Toys</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/add-toy">Add A Toy</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/blogs">Blogs</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/contact">Contact</NavLink>
     </>
 
     return (
@@ -61,8 +61,8 @@ const Navbar = () => {
                 </div>}
 
                 {user ?
-                    <button onClick={handleLogout} className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 '>Logout</button> :
-                    <Link to='/login'><button className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 '>Login</button></Link>
+                    <button onClick={handleLogout} className='px-5 py-2 text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-700 '>Logout</button> :
+                    <Link to='/login'><button className='px-5 py-2 text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-700'>Login</button></Link>
                 }
             </div>
         </div>
