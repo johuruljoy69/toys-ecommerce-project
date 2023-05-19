@@ -60,7 +60,7 @@ const ShopByCategory = () => {
                 <button onClick={() => handleToysCategory('Fire Truck')} className="bg-amber-500 flex items-center hover:bg-amber-700 text-white font-bold py-4 px-7 rounded-full">Fire Truck</button>
             </div>
 
-            <div className='mt-20 mb-12'>
+            <div className=' grid md:grid-cols-3 gap-10 mt-20 mb-12'>
                 {
                     (filterCategory.length > 0 ? filterCategory : categoryToys).map(categoryToy => <CategoryCart
                         key={categoryToy._id}
