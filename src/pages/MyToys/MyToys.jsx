@@ -16,22 +16,23 @@ const MyToys = () => {
                 setMyToys(data)
             })
     }, [url])
+    
 
     const handleDelete = id => {
         const proceed = confirm('Are you sure you want to delete')
-        if(proceed){
+        if (proceed) {
             fetch(`http://localhost:5000/addedtoys/${id}`, {
-                method: 'DELETE' 
-            } )
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if(data.deletedCount > 0){
-                    alert('deleted successful');
-                    const remaining = myToys.filter(myToy => myToy._id !== id);
-                    setMyToys(remaining);
-                }
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        alert('deleted successful');
+                        const remaining = myToys.filter(myToy => myToy._id !== id);
+                        setMyToys(remaining);
+                    }
+                })
         }
     }
 
@@ -39,7 +40,7 @@ const MyToys = () => {
 
     return (
         <div className="mt-10">
-            <h2 className="text-5xl mb-6"> My Toys: {myToys.length} </h2>
+            <h2 className="text-5xl text-center mb-6"> My All Added Toys</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -47,7 +48,7 @@ const MyToys = () => {
                         <tr>
                             <th>
                                 <label>
-
+                                    <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
                             <th>Photo</th>
@@ -56,16 +57,17 @@ const MyToys = () => {
                             <th>Sub-category</th>
                             <th>price</th>
                             <th>Quantity</th>
-                            <th></th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             myToys.map(myToy => <MyToysRow
-                            key={myToy._id}
-                            myToy={myToy}
-                            handleDelete= {handleDelete}
-                            ></MyToysRow> )
+                                key={myToy._id}
+                                myToy={myToy}
+                                handleDelete={handleDelete}
+                            ></MyToysRow>)
                         }
                     </tbody>
                 </table>

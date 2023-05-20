@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AiFillDelete } from 'react-icons/ai';
 
 const MyToysRow = ({ myToy, handleDelete }) => {
-    const { _id, toyPhoto, sellerName, toyName, category, price, quantity } = myToy;
+    const { _id, toyPhoto, sellerName, toyName, category, price, quantity, index } = myToy;
     return (
         <tr>
             <th>
                 <label>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-md btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
+                    <input type="checkbox" className="checkbox" />
                 </label>
             </th>
             <td>
@@ -25,7 +24,7 @@ const MyToysRow = ({ myToy, handleDelete }) => {
             <td>${price}</td>
             <td>{quantity}</td>
             <th>
-                <Link to={`/update/${_id}`}><button className='btn' >Update Toy</button></Link>
+                <Link to={`/update/${_id}`}><button className='px-3 py-2 text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-700 '>Update Toy</button></Link>
                 {/* <button><label htmlFor="my-modal-5" className="btn">Update Toy</label></button>
                 <input type="checkbox" id="my-modal-5" className="modal-toggle" />
                 <div className="modal">
@@ -35,6 +34,13 @@ const MyToysRow = ({ myToy, handleDelete }) => {
                         </div>
                     </div>
                 </div> */}
+            </th>
+            <th>
+                <label>
+                    <button onClick={() => handleDelete(_id)} className="btn btn-md bg-red-500 hover:bg-red-800 border-0 btn-circle">
+                        <AiFillDelete className='text-black' size={'2rem'} />
+                    </button>
+                </label>
             </th>
         </tr>
     );

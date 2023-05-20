@@ -27,7 +27,8 @@ const AddAToys = () => {
     };
 
     return (
-        <div className='mt-12'>
+        <div className='mt-12 mx-10'>
+            <h2 className='text-5xl font-bold text-center mb-10'>Add Your Toys in here</h2>
             <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {/* toy name */}

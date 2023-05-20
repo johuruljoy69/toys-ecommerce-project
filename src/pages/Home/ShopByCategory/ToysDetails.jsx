@@ -8,9 +8,9 @@ const ToysDetails = () => {
     const { _id, toyPhoto, toyName, sellerName, email, price, quantity, rating, description } = toyDetails;
 
     return (
-        <div className="md:flex gap-10 bg-base-100 shadow-xl p-10 mt-20 mb-20">
-            <figure><img className='w-1/2' src={toyPhoto} alt="Movie" /></figure>
-            <div className="card-body">
+        <div className="md:flex justify-around items-center gap-10 bg-base-100 shadow-xl p-10 mt-20 mb-20">
+            <figure><img className='w-80' src={toyPhoto} alt="Movie" /></figure>
+            <div className="space-y-3">
                 <h2 className="text-start text-2xl font-semibold">Toy Name: {toyName}</h2>
                 <h2 className="text-start text-2xl font-semibold">Seller Name: {sellerName}</h2>
                 <p className='text-start text-xl font-semibold'>Email: {email}</p>
