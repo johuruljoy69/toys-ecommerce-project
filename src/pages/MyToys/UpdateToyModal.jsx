@@ -3,7 +3,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
-const UpdateToy = ({ myToy }) => {
+const UpdateToyModal = ({ myToy }) => {
     const { _id, toyPhoto, sellerName, email, toyName, category, price, quantity, description, rating } = myToy;
     const { user } = useContext(AuthContext)
 
@@ -36,7 +36,7 @@ const UpdateToy = ({ myToy }) => {
     }
 
     return (
-        <div className="mt-12">
+        <div className="mt-20">
             <div className='md:flex justify-between gap-5 mx-auto px-14 mb-6'>
                 <div>
                     <img className='w-60' src={toyPhoto} alt="" />
@@ -84,4 +84,4 @@ const UpdateToy = ({ myToy }) => {
     );
 };
 
-export default UpdateToy;
+export default UpdateToyModal;

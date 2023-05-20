@@ -2,36 +2,29 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
-import { GoogleAuthProvider, getAuth, signInWithPopup, updateProfile } from 'firebase/auth';
-import app from '../../firebase/firebase.config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
+    useTitle('Sign Up')
     const [errorPassword, setErrorPassword] = useState('')
     const [success, setSuccess] = useState('');
     const [accepted, setAccepted] = useState(false)
-    const { createUser, setReload } = useContext(AuthContext);
+    const { createUser, googleSignIn, setReload } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation()
-
     const from = location.state?.from?.pathname || '/';
-
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
 
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
+        googleSignIn()
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-                toast.success("Wow! Account Create successfully")
+                console.log(result.user);
                 navigate(from, { replace: true });
+                toast.success("Wow! You SignUp successfully");
             })
-            .catch(error => {
-                console.error(error.message);
-            })
+            .catch(error => console.log(error))
     }
 
     const handleRegister = (event) => {
@@ -69,13 +62,17 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: photoURL
-                }).then(() => {
-                    setReload(new Date().getTime());
-                }).catch((error) => {
-
                 })
+                    .then(() => {
+                        setReload(new Date().getTime());
+                    })
+                    .catch((error) => {
+
+                    })
+                    
                 setSuccess('Account Create Successfully')
                 form.reset();
                 navigate(from, { replace: true });

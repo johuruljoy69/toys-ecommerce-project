@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
-const UpdateToyModal = () => {
+const UpdateToy = () => {
+    useTitle('Update Toy')
     const updateToy = useLoaderData()
     const { _id, toyPhoto, sellerName, email, toyName, category, price, quantity, description, rating } = updateToy;
     const { user } = useContext(AuthContext)
@@ -12,9 +14,9 @@ const UpdateToyModal = () => {
     const onSubmit = (data) => {
         console.log(data);
         fetch(`http://localhost:5000/addedtoys/${_id}`, {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-                "content-type": "application/json"
+                'content-type': 'application/json'
             },
             body: JSON.stringify(data)
         })
@@ -28,7 +30,8 @@ const UpdateToyModal = () => {
     };
 
     return (
-        <div className='mt-12'>
+        <div className='mt-20'>
+            <h2 className='text-center text-3xl mb-10'>Update A Toy Product Information</h2>
             <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {/* toy name */}
@@ -197,4 +200,4 @@ const UpdateToyModal = () => {
     );
 };
 
-export default UpdateToyModal;
+export default UpdateToy;

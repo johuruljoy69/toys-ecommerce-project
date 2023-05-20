@@ -2,35 +2,27 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import app from '../../firebase/firebase.config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    useTitle('Login')
+    const { loginUser, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
     const location = useLocation()
-    // console.log('login page location', location);
     const from = location.state?.from?.pathname || '/';
 
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
-
-
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
+        googleSignIn()
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-                toast.success("Wow! User Login successfully")
+                console.log(result.user);
                 navigate(from, { replace: true });
+                toast.success("Wow! You Login successfully");
             })
-            .catch(error => {
-                console.error(error.message);
-            })
+            .catch(error => console.log(error))
     }
 
     const handleLogin = (event) => {
