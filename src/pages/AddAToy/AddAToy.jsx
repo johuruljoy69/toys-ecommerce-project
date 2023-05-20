@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../contexts/AuthProvider';
 
-const AddToys = () => {
+const AddAToys = () => {
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -18,7 +18,7 @@ const AddToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     alert('Add toy successfully')
                 }
             })
@@ -187,4 +187,4 @@ const AddToys = () => {
     );
 };
 
-export default AddToys;
+export default AddAToys;
