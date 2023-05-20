@@ -14,7 +14,7 @@ const Gallery = () => {
         <div className='text-center mt-24 mb-12'>
             <h2 className='text-5xl font-bold mb-6'>Our Toys Gallery</h2>
             <p>New Arrival</p>
-            <div className='grid md:grid-cols-4 gap-10 mt-10'>
+            <div className='grid md:grid-cols-6 gap-10 mt-10'>
                 {
                     galleries.map(gallery => <CartGallery
                     key={gallery._id}

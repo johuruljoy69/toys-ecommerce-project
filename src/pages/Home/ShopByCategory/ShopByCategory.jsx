@@ -42,6 +42,7 @@ const ShopByCategory = () => {
                     <Tab>Mini Fire Truck</Tab>
                 </TabList>                
                     <TabPanel onClick={() => handleToysCategory('Sports Car')}>
+                    
                     </TabPanel>                
                 
                     <TabPanel onClick={() => handleToysCategory('Police Car')}>

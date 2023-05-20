@@ -1,6 +1,7 @@
 import React from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { Link } from 'react-router-dom';
 
 const CategoryCart = ({ categoryToy }) => {
     const { _id, toyPhoto, toyName, price, rating } = categoryToy;
@@ -17,7 +18,7 @@ const CategoryCart = ({ categoryToy }) => {
                         <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
                         <span className='ps-2 text-2xl font-semibold'>{rating}</span>
                     </div>
-                    <button className="btn btn-primary">Views Details</button>
+                    <Link to={`/toy-details/${_id}`}><button className="btn btn-primary">Views Details</button></Link>
                 </div>
             </div>
         </div>
