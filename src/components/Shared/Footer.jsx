@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.svg'
-import {  } from 'react-icons/bi';
+import {  MdLocationPin, MdEmail, MdPhone} from 'react-icons/md';
+import {  FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaPinterest} from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -11,9 +12,9 @@ const Footer = () => {
                 </div> */}
                 <p><span className='text-4xl font-bold'>JS ToyHub Ltd.</span></p>
                 <p>A kids toy shop is a store that <br /> specializes in selling toys and <br /> games designed specifically for children.</p>
-                <p>Addresss: Jashore Sador, Khulna, Bangladesh</p>
-                <p>Email: contact@jstoyhum.com</p>
-                <p>Phone: +8801753215648</p>
+                <p className='flex items-center'><MdLocationPin size={'1rem'} /> <span className='ps-2'>Jashore Sador, Khulna, Bangladesh</span></p>
+                <p className='flex items-center'><MdEmail size={'1rem'} /> <span className='ps-2'>contact@jstoyhum.com</span></p>
+                <p className='flex items-center'><MdPhone size={'1rem'} /> <span className='ps-2'>+8801753215648</span></p>
             </div>
             <div className='text-white'>
                 <span className="footer-title">Quick Links</span>
@@ -32,12 +33,13 @@ const Footer = () => {
                 <a className="link link-hover">About Us</a>
             </div>
             <div className='text-white'>
-                <span className="footer-title">Follow Us On</span>
-                <a className="link link-hover">Facebook</a>
-                <a className="link link-hover">Twitter</a>
-                <a className="link link-hover">Instagram</a>
-                <a className="link link-hover">Youtube</a>
-                <a className="link link-hover">Pinterest</a>
+                <span className="footer-title"> Follow Us On</span>
+                <a className="link link-hover flex items-center"> <FaFacebook size={'1rem'} /> <span className='ps-3'>Facebook</span> </a>
+                <a className="link link-hover flex items-center"> <FaTwitter size={'1rem'} /> <span className='ps-3'>Twitter</span> </a>
+                <a className="link link-hover flex items-center"> <FaInstagram size={'1rem'} /> <span className='ps-3'>Instagram</span> </a>
+                <a className="link link-hover flex items-center"> <FaYoutube size={'1rem'} /> <span className='ps-3'>Youtube</span> </a>
+                <a className="link link-hover flex items-center"> <FaPinterest size={'1rem'} /> <span className='ps-3'>Pinterest</span> </a>             
+
             </div>
         </footer>
     );
