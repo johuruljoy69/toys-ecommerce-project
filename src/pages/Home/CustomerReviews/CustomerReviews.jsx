@@ -10,7 +10,7 @@ const CustomerReviews = () => {
             </div>
             <div className='grid md:grid-cols-3 gap-10'>
 
-                <div className="card w-96 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
+                <div className="card w-100 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
                     <figure className="px-10 pt-10">
                         <div className="avatar">
                             <div className="w-32 rounded-full">
@@ -27,7 +27,7 @@ const CustomerReviews = () => {
                     </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
+                <div className="card w-100 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
                     <figure className="px-10 pt-10">
                         <div className="avatar">
                             <div className="w-32 rounded-full">
@@ -44,7 +44,7 @@ const CustomerReviews = () => {
                     </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
+                <div className="card w-100 bg-base-100 shadow-xl transform transition duration-500 hover:scale-110">
                     <figure className="px-10 pt-10">
                         <div className="avatar">
                             <div className="w-32 rounded-full">
