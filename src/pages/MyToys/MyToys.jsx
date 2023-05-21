@@ -7,9 +7,10 @@ import Swal from "sweetalert2";
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([])
+    const [ascending, setAscending] = useState(true)
     useTitle('My Toys')
 
-    const url = `https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys?email=${user?.email}`
+    const url = `https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys?email=${user?.email}&sort=${ascending ? 'ascending' : 'descending '}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -17,7 +18,7 @@ const MyToys = () => {
                 setMyToys(data)
             })
     }, [url])
-    
+
 
     const handleDelete = id => {
         const proceed = confirm('Are you sure you want to delete')
@@ -45,8 +46,14 @@ const MyToys = () => {
 
     return (
         <div className="mt-10">
-            <h2 className="text-5xl text-center font-bold pb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600"> My All Added Toys</h2>
-            <div className="overflow-x-auto w-full">
+            <div className='text-center space-y-5'>
+                <h2 className="text-5xl text-center font-bold pb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600"> My All Added Toys</h2>
+
+                <button onClick={() => setAscending(!ascending)} className='px-3 py-2 flex items-center mx-auto text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-700'>{ascending ? 'Price high to low' : 'Price low to high'}</button>
+                
+            </div>
+
+            <div className="overflow-x-auto w-full mt-7">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
