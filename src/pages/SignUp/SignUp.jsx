@@ -5,6 +5,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useTitle from '../../hooks/useTitle';
+import Swal from "sweetalert2";
 
 const SignUp = () => {
     useTitle('Sign Up')
@@ -62,7 +63,16 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-
+                setSuccess('Account Create Successfully')
+                form.reset();
+                navigate(from, { replace: true });
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Wow! Account Create Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+                toast.success("Wow! Account Create successfully")
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: photoURL
                 })
@@ -72,11 +82,6 @@ const SignUp = () => {
                     .catch((error) => {
 
                     })
-                    
-                setSuccess('Account Create Successfully')
-                form.reset();
-                navigate(from, { replace: true });
-                toast.success("Wow! Account Create successfully")
 
             })
             .catch(error => {

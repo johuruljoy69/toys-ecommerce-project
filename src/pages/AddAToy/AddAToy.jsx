@@ -155,20 +155,6 @@ const AddAToys = () => {
                         {errors.rating && <p className="text-red-500 text-xs italic">Rating is required</p>}
                     </div>
 
-                    {/* Detail description */}
-                    <div className="mb-4">
-                        <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
-                            Detail Description
-                        </label>
-                        <input
-                            type="text"
-                            id="description"
-                            {...register('description', { required: true })}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        />
-                        {errors.description && <p className="text-red-500 text-xs italic">Description is required</p>}
-                    </div>
-
                     {/* Date */}
                     <div className="mb-4">
                         <label htmlFor="date" className="block text-gray-700 text-sm font-bold mb-2">
@@ -181,6 +167,33 @@ const AddAToys = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         />
                         {errors.date && <p className="text-red-500 text-xs italic">Date is required</p>}
+                    </div>
+                    {/* Like */}
+                    <div className="mb-4">
+                        <label htmlFor="like" className="block text-gray-700 text-sm font-bold mb-2">
+                            Like
+                        </label>
+                        <input
+                            type="number"
+                            id="like"
+                            {...register('like', { required: true, min: 0 })}
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                        {errors.like && <p className="text-red-500 text-xs italic">Date is required</p>}
+                    </div>
+
+                    {/* Detail description */}
+                    <div className="mb-4 col-span-2 ">
+                        <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
+                            Detail Description
+                        </label>
+                        <textarea
+                            type="text"
+                            id="description"
+                            {...register('description', { required: true })}
+                            className="shadow appearance-none border rounded w-full h-[200px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                        {errors.description && <p className="text-red-500 text-xs italic">Description is required</p>}
                     </div>
 
                 </div>

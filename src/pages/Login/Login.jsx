@@ -5,6 +5,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useTitle from '../../hooks/useTitle';
+import Swal from "sweetalert2";
 
 const Login = () => {
     useTitle('Login')
@@ -20,6 +21,12 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 navigate(from, { replace: true });
+                Swal.fire({
+                        title: 'Success!',
+                        text: 'Login Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
                 toast.success("Wow! You Login successfully");
             })
             .catch(error => console.log(error))
@@ -41,6 +48,12 @@ const Login = () => {
                 setSuccess('User Login successfully')
                 form.reset();
                 navigate(from, { replace: true });
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Login Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
                 toast.success("Wow! You Login successfully");
             })
             .catch(error => {

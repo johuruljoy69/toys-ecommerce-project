@@ -7,7 +7,9 @@ import CategoryCart from './CategoryCart';
 const ShopByCategory = () => {
     const { user } = useContext(AuthContext);
     const [categoryToys, setCategoryToys] = useState([])
+    // const [isActive, setIsActive] = useState(true);
 
+    const [filterCategory, setFilterCategory] = useState([])
     const url = 'https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys'
     useEffect(() => {
         fetch(url)
@@ -17,7 +19,6 @@ const ShopByCategory = () => {
             })
     }, [])
 
-    const [filterCategory, setFilterCategory] = useState([])
     const handleToysCategory = (category, _id) => {
         const categoryItems = categoryToys.filter(categoryToy => categoryToy.category === category);
         if (category === 'Sports Car') {
@@ -37,7 +38,7 @@ const ShopByCategory = () => {
                 <h2 className='text-5xl font-bold pb-6'>Shop By Category </h2>
                 <p className='pb-6 text-xl font-semibold'>Our Collections</p>
             </div>
-            {/* <Tabs>
+            <Tabs>
                 <TabList className='text-xl font-semibold bg-[#ECE3E1] pb-8'>
                     <Tab onClick={() => handleToysCategory('Sports Car')}>Sports Car</Tab>
                     <Tab onClick={() => handleToysCategory('Police Car')}>Mini Police Car</Tab>
@@ -56,15 +57,15 @@ const ShopByCategory = () => {
 
                 </TabPanel>
 
-            </Tabs> */}
+            </Tabs>
 
 
-            
+{/*             
             <div className='flex justify-center bg-[#ECE3E1]  gap-4 pt-5 pb-10'>
-                <button onClick={() => handleToysCategory('Sports Car')} className="bg-blue-500 flex items-center hover:bg-blue-700 text-white font-bold py-4 px-7 rounded-full">Sports Car</button>
+                <button onClick={() => handleToysCategory('Sports Car')} className="bg-blue-500 flex items-center hover:bg-blue-700 text-white font-bold py-4 px-7 cursor-default rounded-full">Sports Car</button>
                 <button onClick={() => handleToysCategory('Police Car')} className="bg-purple-500 flex items-center hover:bg-purple-700 text-white font-bold py-4 px-7 rounded-full">Police Car</button>
                 <button onClick={() => handleToysCategory('Fire Truck')} className="bg-amber-500 flex items-center hover:bg-amber-700 text-white font-bold py-4 px-7 rounded-full">Fire Truck</button>
-            </div>
+            </div> */}
 
             <div className=' grid md:grid-cols-3 gap-10 mt-20 mb-12 mx-10'>
                 {
