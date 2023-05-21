@@ -16,6 +16,8 @@ const ShopByCategory = () => {
             .then(res => res.json())
             .then(data => {
                 setCategoryToys(data)
+                const categoryItems = data.filter(categoryToy => categoryToy.category === 'Sports Car');
+                setFilterCategory(categoryItems)
             })
     }, [])
 
