@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import { ToastContainer, toast } from 'react-toastify';
+import Swal from "sweetalert2";
 
 const AddAToys = () => {
     const { user } = useContext(AuthContext)
@@ -10,7 +12,7 @@ const AddAToys = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        fetch('http://localhost:5000/addedToys', {
+        fetch('https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -20,8 +22,14 @@ const AddAToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.modifiedCount > 0) {
-                    alert('Add toy successfully')
+                if (data.insertedId) {
+                    toast.success("Wow! Toy Added successfully");
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
     };
@@ -115,7 +123,7 @@ const AddAToys = () => {
                             type="number"
                             id="price"
                             placeholder="Price"
-                            {...register('price', { required: true, min: 0})}
+                            {...register('price', { required: true, min: 0 })}
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         />
                         {errors.price && <p className="text-red-500 text-xs italic">Price is required</p>}
@@ -150,12 +158,12 @@ const AddAToys = () => {
                     {/* Detail description */}
                     <div className="mb-4">
                         <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
-                        Detail Description
+                            Detail Description
                         </label>
                         <input
                             type="text"
                             id="description"
-                            {...register('description', { required: true})}
+                            {...register('description', { required: true })}
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         />
                         {errors.description && <p className="text-red-500 text-xs italic">Description is required</p>}
@@ -184,6 +192,7 @@ const AddAToys = () => {
                     >
                         Add Toy Product
                     </button>
+                    <ToastContainer />
                 </div>
             </form>
         </div>

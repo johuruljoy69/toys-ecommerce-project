@@ -64,12 +64,12 @@ const router = createBrowserRouter([
             {
                 path: '/toy-details/:id',
                 element: <PrivateRoute><ToysDetails></ToysDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/addedtoys/${params.id}`)
+                loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys/${params.id}`)
             },
             {
                 path: '/update/:id',
                 element: <UpdateToy></UpdateToy>,
-                loader: ({params}) => fetch(`http://localhost:5000/addedtoys/${params.id}`)
+                loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys/${params.id}`)
             }
         ]
     },

@@ -8,7 +8,7 @@ const ShopByCategory = () => {
     const { user } = useContext(AuthContext);
     const [categoryToys, setCategoryToys] = useState([])
 
-    const url = 'http://localhost:5000/addedtoys'
+    const url = 'https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys'
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

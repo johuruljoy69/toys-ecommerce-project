@@ -23,7 +23,7 @@ const AllToysRow = ({ allToy }) => {
             <td>${price}</td>
             <td>{quantity}</td>
             <th>
-                <Link to={`/toy-details/${_id}`} ><button className="btn btn-ghost btn-xs">Views Details</button></Link>
+                <Link to={`/toy-details/${_id}`} ><button className="px-3 py-2 text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-700">Views Details</button></Link>
             </th>
         </tr>
 

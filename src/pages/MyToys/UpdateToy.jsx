@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { useLoaderData, useParams } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import Swal from "sweetalert2";
+
 
 const UpdateToy = () => {
     const { id } = useParams()
@@ -14,7 +16,7 @@ const UpdateToy = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        fetch(`http://localhost:5000/addedtoys/${id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -25,7 +27,12 @@ const UpdateToy = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    alert('Add toy successfully')
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
     };

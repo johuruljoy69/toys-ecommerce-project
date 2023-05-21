@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import MyToysRow from './MyToysRow';
 import useTitle from '../../hooks/useTitle';
+import Swal from "sweetalert2";
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([])
     useTitle('My Toys')
 
-    const url = `http://localhost:5000/addedtoys?email=${user?.email}`
+    const url = `https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -21,14 +22,18 @@ const MyToys = () => {
     const handleDelete = id => {
         const proceed = confirm('Are you sure you want to delete')
         if (proceed) {
-            fetch(`http://localhost:5000/addedtoys/${id}`, {
+            fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
                     if (data.deletedCount > 0) {
-                        alert('deleted successful');
+                        Swal.fire(
+                            'Deleted!',
+                            'Your Toy has been deleted.',
+                            'success'
+                        )
                         const remaining = myToys.filter(myToy => myToy._id !== id);
                         setMyToys(remaining);
                     }

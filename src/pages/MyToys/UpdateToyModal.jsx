@@ -17,7 +17,7 @@ const UpdateToyModal = ({ myToy }) => {
 
         const updatedToy = { _id, price, quantity, description }
 
-        fetch(`http://localhost:5000/addedtoys/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
