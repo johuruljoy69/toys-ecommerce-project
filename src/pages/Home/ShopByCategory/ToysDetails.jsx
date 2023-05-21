@@ -10,13 +10,13 @@ const ToysDetails = () => {
     return (
         <div className="md:flex justify-around items-center gap-10 bg-base-100 shadow-xl p-10 mt-20 mb-20">
             <figure><img className='w-80' src={toyPhoto} alt="Movie" /></figure>
-            <div className="space-y-3">
-                <h2 className="text-start text-2xl font-semibold">Toy Name: {toyName}</h2>
-                <h2 className="text-start text-2xl font-semibold">Seller Name: {sellerName}</h2>
-                <p className='text-start text-xl font-semibold'>Email: {email}</p>
-                <p className='text-start text-xl font-semibold'>Price: ${price}</p>
-                <p className='text-start text-xl font-semibold'>Quantity: {quantity}</p>
-                <p className='text-start text-xl font-semibold'>Description: {description}</p>
+            <div className="text-start space-y-1">
+                <h2 className=" text-2xl font-semibold"><span className='text-purple-700'>Toy Name:</span> {toyName}</h2>
+                <h2 className="text-2xl font-semibold"><span className='text-purple-700'>Seller Name:</span> {sellerName}</h2>
+                <p className='text-xl font-semibold'><span className='text-purple-700'>Email:</span> {email}</p>
+                <p className='text-xl font-semibold'><span className='text-purple-700'>Price:</span> ${price}</p>
+                <p className='text-xl font-semibold'><span className='text-purple-700'>Quantity:</span> {quantity}</p>
+                <p><span className='font-semibold text-purple-700'>Description:</span> {description}</p>
                 <div className="flex justify-between items-center">
                     <div className='flex justify-center items-center'>
                         <Rating style={{ maxWidth: 150 }} value={rating} readOnly />

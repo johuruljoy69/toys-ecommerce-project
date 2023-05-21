@@ -9,7 +9,7 @@ const AllToys = () => {
     const [searchText, setSearchText] = useState("");
     useTitle('All Toys')
 
-    const url = 'https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys'
+    const url = 'http://localhost:5000/addedtoys'
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -19,7 +19,7 @@ const AllToys = () => {
     }, [])
 
     const handleSearchText = () => {
-        fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/getToyByText/${searchText}`)
+        fetch(`http://localhost:5000/getToyByText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log('Search by text', data);

@@ -52,9 +52,9 @@ const Login = () => {
     return (
         <div className='container mx-auto mt-12 mb-12'>
             <div className="hero min-h-screen">
-                <div className="hero-content md:flex border p-12 ">
-                    <div>
-                        <img src="https://img.freepik.com/free-vector/global-data-security-personal-data-security-cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37336.jpg?w=826&t=st=1684418196~exp=1684418796~hmac=e2e4c2f8efd48843a4e11692f364d54bf2aeb7e0cec9dc222759ae2f5a8cb9f1" alt="" />
+                <div className=" md:flex items-center justify-center gap-10 border p-12 ">
+                    <div className='flex items-center'>
+                        <img className='h-1/2' src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7892.jpg?w=740&t=st=1684651109~exp=1684651709~hmac=aa31d63ed983707f074dffb81243de34e43b2fe9660bf5cda8d1d0bd9fb15a40" alt="" />
                     </div>
                     <div className="">
                         <h1 className="text-5xl font-bold mb-5">Login</h1>

@@ -10,7 +10,7 @@ const AddAToys = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        fetch('https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedToys', {
+        fetch('http://localhost:5000/addedToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

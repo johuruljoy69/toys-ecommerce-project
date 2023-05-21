@@ -4,7 +4,7 @@ import NewsCart from './NewsCart';
 const LatestNews = () => {
     const [toyNews, setToyNews] = useState([])
 
-    const url = 'https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys'
+    const url = 'http://localhost:5000/addedtoys'
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

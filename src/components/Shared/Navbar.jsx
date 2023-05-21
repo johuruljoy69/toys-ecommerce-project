@@ -18,8 +18,10 @@ const Navbar = () => {
         <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/">Home</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/about">About</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/all-toys">All Toys</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/my-toys">My Toys</NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/add-toy">Add A Toy</NavLink>
+        {
+            user?.email? <><NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/my-toys">My Toys</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/add-toy">Add A Toy</NavLink></> : ""
+        }
         <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/blogs">Blogs</NavLink>
         <NavLink className={({ isActive }) => (isActive ? 'text-blue-700' : '')} to="/contact">Contact</NavLink>
     </>
