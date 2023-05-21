@@ -14,14 +14,14 @@ const SubscribeOffer = () => {
             </div>
             <div>
                 <div className='text-center space-y-5 pt-10'>
-                    <h2 className='text-5xl font-bold'>Subscribe For Offer!</h2>
+                    <h2 className='text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Subscribe For Offer!</h2>
                     <p className='text-xl font-semibold'>NEWSLETTER SIGNUP</p>
                 </div>
                 <form onSubmit={handleSubscribe} className=' pb-10 pt-10'>
                     <div className=" mx-auto">
                         <label className="input-group">
                             <input type="text" placeholder="example@company.com" className="input input-bordered" />
-                            <span><button>Subscribe</button></span>
+                            <span><button className='font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Subscribe</button></span>
                         </label>
                     </div>
                     <div className="flex items-center mt-5">

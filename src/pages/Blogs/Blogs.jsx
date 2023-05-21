@@ -6,7 +6,7 @@ const Blogs = () => {
     return (
         <div className='mx-10'>
             <div className='text-center mt-12 mb-12'>
-                <h2 className='text-5xl font-extrabold'>Blog Page</h2>
+                <h2 className='text-5xl pb-5 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Blog Page</h2>
             </div>
             <div className='grid gap-10'>
                 {/* Blog-1 */}

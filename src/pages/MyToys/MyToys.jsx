@@ -45,17 +45,12 @@ const MyToys = () => {
 
     return (
         <div className="mt-10">
-            <h2 className="text-5xl text-center mb-6"> My All Added Toys</h2>
+            <h2 className="text-5xl text-center font-bold pb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600"> My All Added Toys</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
                             <th>Photo</th>
                             <th>Seller Name</th>
                             <th>Toy Name</th>

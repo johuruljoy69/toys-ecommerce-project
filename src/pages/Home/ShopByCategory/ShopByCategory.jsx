@@ -35,7 +35,7 @@ const ShopByCategory = () => {
     return (
         <div className='text-center mt-24 mb-12'>
             <div className='bg-[#ECE3E1] pt-8'>
-                <h2 className='text-5xl font-bold pb-6'>Shop By Category </h2>
+                <h2 className='text-5xl font-bold pb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Shop By Category </h2>
                 <p className='pb-6 text-xl font-semibold'>Our Collections</p>
             </div>
             <Tabs>

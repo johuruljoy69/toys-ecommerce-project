@@ -5,7 +5,7 @@ const CustomerReviews = () => {
     return (
         <div className='mt-24 mx-10'>
             <div className='text-center mb-20'>
-                <h2 className='text-5xl font-bold pb-6'>What They Say</h2>
+                <h2 className='text-5xl font-bold pb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>What They Say</h2>
                 <p className='text-xl font-semibold'>Customer Testimonial</p>
             </div>
             <div className='grid md:grid-cols-3 gap-10'>

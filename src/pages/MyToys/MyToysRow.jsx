@@ -6,11 +6,6 @@ const MyToysRow = ({ myToy, handleDelete }) => {
     const { _id, toyPhoto, sellerName, toyName, category, price, quantity, index } = myToy;
     return (
         <tr>
-            <th>
-                <label>
-                    <input type="checkbox" className="checkbox" />
-                </label>
-            </th>
             <td>
                 <div className="avatar">
                     <div className="rounded w-20 h-20">
@@ -25,15 +20,6 @@ const MyToysRow = ({ myToy, handleDelete }) => {
             <td>{quantity}</td>
             <th>
                 <Link to={`/update/${_id}`}><button className='px-3 py-2 text-white font-semibold rounded-lg bg-blue-500 hover:bg-blue-700 '>Update Toy</button></Link>
-                {/* <button><label htmlFor="my-modal-5" className="btn">Update Toy</label></button>
-                <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-                <div className="modal">
-                    <div className="modal-box w-11/12 max-w-5xl">
-                        <div className="modal-action">
-                            <label htmlFor="my-modal-5" className="btn">Close</label>
-                        </div>
-                    </div>
-                </div> */}
             </th>
             <th>
                 <label>

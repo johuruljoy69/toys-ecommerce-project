@@ -30,7 +30,7 @@ const AllToys = () => {
 
     return (
         <div className="mt-10">
-            <h2 className="text-5xl mb-6 text-center"> Search Your Favorite Toys </h2>
+            <h2 className="text-5xl pb-6 text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600"> Search Your Favorite Toys </h2>
             <div className="form-control mb-6 ">
                 <div className="input-group flex justify-center items-center">
                     <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Search…" className="input input-bordered" />

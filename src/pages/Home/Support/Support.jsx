@@ -13,7 +13,7 @@ const Support = () => {
                         <FiSmile size={'5em'} />
                     </div>
                     <div>
-                        <h2 className='text-xl font-semibold'>100% Satisfaction</h2>
+                        <h2 className='text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>100% Satisfaction</h2>
                         <p>If You Are Unable</p>
                     </div>
                 </div>
@@ -23,7 +23,7 @@ const Support = () => {
                         <MdSupportAgent size={'5em'} />
                     </div>
                     <div>
-                        <h2 className='text-xl font-semibold'>Online Support</h2>
+                        <h2 className='text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Online Support</h2>
                         <p>Any Time Support</p>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ const Support = () => {
                         <BiMoneyWithdraw size={'5em'} />
                     </div>
                     <div>
-                        <h2 className='text-xl font-semibold'>Money Returns</h2>
+                        <h2 className='text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Money Returns</h2>
                         <p>Guarantee In 7 Days</p>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ const Support = () => {
                         <TbDiscount size={'5em'} />
                     </div>
                     <div>
-                        <h2 className='text-xl font-semibold'>Member Discount</h2>
+                        <h2 className='text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Member Discount</h2>
                         <p>Customers First Order</p>
                     </div>
                 </div>

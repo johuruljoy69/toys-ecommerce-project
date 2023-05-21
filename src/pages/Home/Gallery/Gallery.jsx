@@ -12,7 +12,7 @@ const Gallery = () => {
     }, [])
     return (
         <div className='text-center mt-24 mb-12'>
-            <h2 className='text-5xl font-bold mb-6'>Our Toys Gallery</h2>
+            <h2 className='text-5xl font-bold pb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Our Toys Gallery</h2>
             <p className='text-xl font-semibold'>New Arrival</p>
             <div className='grid md:grid-cols-6 gap-10 mt-10 mx-10'>
                 {

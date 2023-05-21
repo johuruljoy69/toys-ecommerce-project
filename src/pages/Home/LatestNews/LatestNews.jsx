@@ -15,7 +15,7 @@ const LatestNews = () => {
 
     return (
         <div className='text-center mt-24 mb-24'>
-            <h2 className='text-5xl font-bold mb-6'>Latest News</h2>
+            <h2 className='text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600'>Latest News</h2>
             <p className='text-xl font-semibold mb-10'>Our News & Events</p>
             <div className='grid md:grid-cols-3 gap-6 mx-10'>
                 {
