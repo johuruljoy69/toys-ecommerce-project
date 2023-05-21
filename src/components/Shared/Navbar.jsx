@@ -35,7 +35,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to='/' ><img className='w-10' src={logo} alt="" /></Link>
+                <img className='rounded-full w-14' src={logo} alt="logo" />
                 <Link to="/" className="btn btn-ghost normal-case text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600"> JS ToyHub</Link>
             </div>
             <div className="navbar-center hidden lg:flex">

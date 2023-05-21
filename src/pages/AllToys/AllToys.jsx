@@ -9,7 +9,7 @@ const AllToys = () => {
     const [searchText, setSearchText] = useState("");
     useTitle('All Toys')
 
-    const url = 'http://localhost:5000/addedtoys'
+    const url = 'https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys'
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -19,7 +19,7 @@ const AllToys = () => {
     }, [])
 
     const handleSearchText = () => {
-        fetch(`http://localhost:5000/getToyByText/${searchText}`)
+        fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/getToyByText/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log('Search by text', data);
@@ -60,7 +60,7 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            allToys.map(allToy => <AllToysRow
+                            allToys.slice(0, 20).map(allToy => <AllToysRow
                                 key={allToy._id}
                                 allToy={allToy}
                             ></AllToysRow>)

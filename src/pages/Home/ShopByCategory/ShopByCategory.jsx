@@ -8,7 +8,7 @@ const ShopByCategory = () => {
     const { user } = useContext(AuthContext);
     const [categoryToys, setCategoryToys] = useState([])
 
-    const url = 'http://localhost:5000/addedtoys'
+    const url = 'https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys'
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -35,7 +35,7 @@ const ShopByCategory = () => {
         <div className='text-center mt-24 mb-12'>
             <div className='bg-[#ECE3E1] pt-8'>
                 <h2 className='text-5xl font-bold pb-6'>Shop By Category: {categoryToys.length}  </h2>
-                <p className='pb-6'>Our Collections</p>
+                <p className='pb-6 text-xl font-semibold'>Our Collections</p>
             </div>
             <Tabs>
                 <TabList className='text-xl font-semibold bg-[#ECE3E1] pb-8'>

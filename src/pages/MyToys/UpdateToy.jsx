@@ -13,7 +13,7 @@ const UpdateToy = () => {
 
     const onSubmit = (data) => {
         console.log(data);
-        fetch(`http://localhost:5000/addedtoys/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-johuruljoy69.vercel.app/addedtoys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -30,7 +30,7 @@ const UpdateToy = () => {
     };
 
     return (
-        <div className='mt-20'>
+        <div className='mt-20 mx-20'>
             <h2 className='text-center text-3xl mb-10'>Update A Toy Product Information</h2>
             <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

@@ -6,7 +6,7 @@ import { TbDiscount } from 'react-icons/tb';
 
 const Support = () => {
     return (        
-            <div className="border bg-orange-100 md:flex justify-center items-center">
+            <div className=" md:flex justify-center items-center mx-10 ">
 
                 <div className="stat text-center">
                     <div className="flex justify-center">

@@ -7,12 +7,13 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 const CategoryCart = ({ categoryToy }) => {
     const { _id, toyPhoto, toyName, price, rating } = categoryToy;
     return (
-        <div className="card w-100 h-100 bg-base-100 shadow-xl">
+        <div className="card w-100 h-100 bg-base-100 shadow-xl" data-aos="fade-up"
+        data-aos-duration="3000">
             <div className='flex items-center justify-center'>
                 <figure><img className='w-72 p-5' src={toyPhoto} alt="Album" /></figure>
             </div>
             <div className="card-body text-start">
-                <h2 className="text-2xl font-semibold">{toyName}</h2>
+                <h2 className="text-xl font-semibold">{toyName}</h2>
                 <p className=' text-2xl font-semibold'>Price: ${price}</p>
                 <div className="md:flex justify-between items-center gap-6">
                     <div className='flex items-center'>

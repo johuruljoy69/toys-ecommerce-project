@@ -7,6 +7,8 @@ import Support from './Support/Support';
 import LatestNews from './LatestNews/LatestNews';
 import useTitle from '../../hooks/useTitle';
 import { Link } from 'react-router-dom';
+import CustomerReviews from './CustomerReviews/CustomerReviews';
+import SubscribeOffer from './SubscribeOffer/SubscribeOffer';
 
 
 const Home = () => {
@@ -15,7 +17,7 @@ const Home = () => {
     return (
         <>
             <div className="md:flex justify-around items-center gap-10 bg-[#ECE3E1] p-10 mb-10">
-                <div className=" mx-auto items-center space-y-3" data-aos="fade-right" data-aos-duration="3000">
+                <div className=" mx-auto space-y-3" data-aos="fade-right" data-aos-duration="3000">
                     <button className='text-center font-semibold text-white text-2xl px-7 py-4 bg-orange-400'>New Arrival</button>
                     <h2 className="text-7xl font-extrabold ">One Box Toy</h2>
                     <p className='text-xl font-semibold pb-5'>Flat 10% Off On Order Above $29.99</p>
@@ -31,7 +33,9 @@ const Home = () => {
             </div>
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
+            <CustomerReviews></CustomerReviews>
             <LatestNews></LatestNews>
+            <SubscribeOffer></SubscribeOffer>
             <Support></Support>
 
         </>
